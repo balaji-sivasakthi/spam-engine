@@ -3,12 +3,10 @@ import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
-# from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 from sklearn.ensemble import RandomForestClassifier
 
 # Data Collection and Pre Processing
-# 1 Load Data from csv file to a pandas datafram
 raw_mail_data = pd.read_csv('/home/lalith/Documents/Company/TRS/Projects/spamengine/Identify-Spam-Email-ML-Model/mail_data.csv')
 raw_mail_data.head()
 
@@ -33,15 +31,14 @@ X_test_feature = feature_extraction.transform(X_test)
 Y_Train = Y_Train.astype('int')
 Y_test = Y_test.astype('int')
 
-# print(X_train_feature)
-
 model = RandomForestClassifier()
 
 model.fit(X_train_feature,Y_Train)
 
 # Evaluating the Trained Model
-# Predition on Training Model
 prediction_on_Training_Data = model.predict(X_train_feature)
+
+# Predition on Training Model
 accuracy_on_training_data = accuracy_score(Y_Train,prediction_on_Training_Data)
 
 print("Accuracy for Training : ",accuracy_on_training_data * 100)
