@@ -7,7 +7,7 @@ from sklearn.metrics import accuracy_score
 from sklearn.ensemble import RandomForestClassifier
 
 # Data Collection and Pre Processing
-raw_mail_data = pd.read_csv('/home/lalith/Documents/Company/TRS/Projects/spamengine/Identify-Spam-Email-ML-Model/mail_data.csv')
+raw_mail_data = pd.read_csv('mail_data.csv')
 raw_mail_data.head()
 
 # Replace the null values with a null string

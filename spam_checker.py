@@ -1,12 +1,12 @@
 from mail_spam_checker import model, feature_extraction
 import pickle
 from langdetect import detect
+import sys
 
 
 model_file = 'model.pkl'
 pickled_model = pickle.load(open('model.pkl', 'rb'))
-
-input_message = input("enter your email Z")
+input_message = sys.argv[1]
 
 test = detect(input_message)
 
